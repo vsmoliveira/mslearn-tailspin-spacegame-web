@@ -25,8 +25,8 @@ namespace TailSpin.SpaceGame.Web.Controllers
         }
 
         public async Task<IActionResult> Index(
-            int page = 1, 
-            int pageSize = 10, 
+            int page = 1,
+            int pageSize = 10,
             string mode = "",
             string region = ""
             )
@@ -104,6 +104,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 return View(vm);
             }
             catch (Exception)
+            catch (Exception)
             {
                 return View(vm);
             }
@@ -117,6 +118,7 @@ namespace TailSpin.SpaceGame.Web.Controllers
                 // Fetch the user profile with the given identifier.
                 return View(new ProfileViewModel { Profile = await _profileRespository.GetItemAsync(id), Rank = rank });
             }
+            catch (Exception)
             catch (Exception)
             {
                 return RedirectToAction("/");
